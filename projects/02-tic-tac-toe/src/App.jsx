@@ -15,10 +15,10 @@ const Square = ({ children, isSelected, updateBoard, index }) => {
 
   return (
     <div onClick={handleClick} className={className}>
-        {children}
+      {children}
     </div>
   )
-} 
+}
 
 const WINNER_COMBOS = [
   [0, 1, 2], // Top row
@@ -59,6 +59,11 @@ function App() {
     setWinner(null)
   }
 
+  const checkEndGame = (newBoard) => {
+    // Check if all squares are filled and there is no winner
+    return newBoard.every((square) => square !== null)
+  }
+
   const updateBoard = (index) => {
     // If the square is already filled, return early
     if (board[index] || winner) return
@@ -73,22 +78,27 @@ function App() {
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
       setWinner(newWinner)
-    } // TODO: Check if the game is over
+    } else if (checkEndGame(newBoard)) {
+      setWinner(false)  // Empate
+    }
   }
 
   return (
     <main className="board">
       <h1>Tic Tac Toe</h1>
+      <button onClick={resetGame}>
+        Reset Game
+      </button>
       <section className="game">
         {
-          board.map((_, index) => {
+          board.map((square, index) => {
             return (
-              <Square 
-                key={index} 
+              <Square
+                key={index}
                 index={index}
                 updateBoard={updateBoard}
               >
-                {board[index]}
+                {square}
               </Square>
             )
           })
@@ -120,7 +130,7 @@ function App() {
               </header>
               <footer>
                 <button onClick={resetGame}>
-                  Restart Game
+                  Reset Game
                 </button>
               </footer>
             </div>
