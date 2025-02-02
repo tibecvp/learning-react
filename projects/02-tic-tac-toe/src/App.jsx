@@ -1,4 +1,3 @@
-// 1:03:30
 import { useState } from "react"
 import confetti from 'canvas-confetti'
 
