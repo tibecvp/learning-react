@@ -1,5 +1,4 @@
 # [EN🇨🇦] React Technical Challenge for Jr and Trainee - Live Coding
-___
 
 ## APIs:
 
@@ -14,8 +13,7 @@ ___
 - Fetch a cat image from the second API using the first word of the fact fetched from the first API
 ___
 
-# [SP🇨🇴] Prueba técnica para Juniors y Trainees de React en Live Coding.
-___
+# [SP🇨🇴] Prueba técnica de React para Juniors y Trainees en Live Coding.
 
 ## APIs:
 
