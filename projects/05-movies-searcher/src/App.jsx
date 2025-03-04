@@ -37,7 +37,7 @@ function useSearch() {
 
 function App() {
   const { search, updateSearch, error } = useSearch()
-  const { movies, getMovies } = useMovies({ search })
+  const { movies, loading, getMovies } = useMovies({ search })
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -46,7 +46,6 @@ function App() {
 
     // const { query } = Object.fromEntries(new FormData(event.target))
     getMovies()
-    console.log('Search:', search)
   }
 
   const handleChange = (event) => {
@@ -65,7 +64,9 @@ function App() {
       </header>
 
       <main>
-        <Movies movies={movies} />
+        {
+          loading ? <p>Loading...</p> : <Movies movies={movies} />
+        }
       </main>
     </div>
   )
