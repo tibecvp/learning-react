@@ -36,8 +36,8 @@ function useSearch() {
 }
 
 function App() {
-  const { movies: mappedMovies } = useMovies()
   const { search, updateSearch, error } = useSearch()
+  const { movies, getMovies } = useMovies({ search })
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -45,7 +45,8 @@ function App() {
     // const query = fields.get('query')
 
     // const { query } = Object.fromEntries(new FormData(event.target))
-    console.log({ search })
+    getMovies()
+    console.log('Search:', search)
   }
 
   const handleChange = (event) => {
@@ -64,7 +65,7 @@ function App() {
       </header>
 
       <main>
-        <Movies movies={mappedMovies} />
+        <Movies movies={movies} />
       </main>
     </div>
   )
