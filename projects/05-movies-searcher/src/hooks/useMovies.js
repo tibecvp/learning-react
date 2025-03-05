@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useMemo, useCallback } from 'react'
 import { searchMovies } from '../services/movies.js'
 
 export function useMovies({ search, sort }) {
@@ -7,30 +7,31 @@ export function useMovies({ search, sort }) {
     const [error, setError] = useState(null)
     const previousSearch = useRef(search)
 
-    const getMovies = async () => {
-        if (search === previousSearch.current) return
+    const getMovies = useCallback(
+        async ({ search }) => {
+            if (search === previousSearch.current) return
 
-        try {
-            setLoading(true)
-            setError(null)
-            previousSearch.current = search
-            const newMovies = await searchMovies({ search })
-            setMovies(newMovies)
-        } catch (e) {
-            setError(e.message)
-        } finally {
-            setLoading(false)
-        }
-    }
+            try {
+                setLoading(true)
+                setError(null)
+                previousSearch.current = search
+                const newMovies = await searchMovies({ search })
+                setMovies(newMovies)
+            } catch (e) {
+                setError(e.message)
+                console.error('Error Details: ', error)
+            } finally {
+                setLoading(false)
+            }
+        }, []
+    )
 
-    const getSortedMovies = () => {
-        const sortedMovies = sort
+    const sortedMovies = useMemo(() => {
+        return sort
             ? [...movies].sort((a, b) => a.title.localeCompare(b.title))
             : movies
-
-        return sortedMovies
-    }
+    }, [sort, movies])
 
 
-    return { movies: getSortedMovies(movies), loading, getMovies }
+    return { movies: sortedMovies, loading, getMovies }
 }
