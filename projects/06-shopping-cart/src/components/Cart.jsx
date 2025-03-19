@@ -46,10 +46,17 @@ export function Cart() {
                     ))}
                 </ul>
 
-                <button onClick={clearCart}>
-                    <ClearCartIcon />
-                    Clear Cart
-                </button>
+                {
+                    cart.length === 0
+                        ? (<p>Your cart is empty.</p>)
+                        : (
+                            <button onClick={clearCart}>
+                                <ClearCartIcon />
+                                Clear Cart
+                            </button>
+                        )
+                }
+
             </aside>
         </>
     )
