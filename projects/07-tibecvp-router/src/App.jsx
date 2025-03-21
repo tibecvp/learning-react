@@ -1,11 +1,19 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+
+const NAVIGATION_EVENT = 'pushstate'
+
+function navigate(href) {
+  window.history.pushState({}, '', href)
+  const navigationEvent = new Event(NAVIGATION_EVENT)
+  window.dispatchEvent(navigationEvent)
+}
 
 function HomePage() {
   return (
     <>
       <h1>Home Page</h1>
       <p>This is an example page to create a react router from scratch.</p>
-      <a href="/about">Go to About Us</a>
+      <button onClick={() => navigate('/about')}>Go to About Us</button>
     </>
   )
 }
@@ -18,13 +26,26 @@ function AboutPage() {
         <img width='240px' src="https://media.licdn.com/dms/image/v2/D5603AQHEORdTR4pcuw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724258334598?e=1747872000&v=beta&t=xqkZsLN5L7XV4w-zeyakXgXVVBvQakFJvfmwkPoGNyc" alt="Tibe´s picture" />
       </div>
       <p>This is an example page to create a react router from scratch.</p>
-      <a href="/">Go to Home</a>
+      <button onClick={() => navigate('/')}>Go to Home</button>
     </>
   )
 }
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
+
+  useEffect(() => {
+    const onLocationChange = () => {
+      setCurrentPath(window.location.pathname)
+    }
+
+    window.addEventListener(NAVIGATION_EVENT, onLocationChange)
+
+    return () => {
+      window.removeEventListener(NAVIGATION_EVENT, onLocationChange)
+    }
+  }, [])
+
   return (
     <>
       {currentPath === '/' && <HomePage />}
