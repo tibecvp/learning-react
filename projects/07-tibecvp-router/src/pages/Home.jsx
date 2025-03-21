@@ -1,11 +1,11 @@
-import { navigate } from '../Link.jsx'
+import { Link } from '../Link.jsx'
 
 export function HomePage() {
     return (
         <>
             <h1>Home Page</h1>
             <p>This is an example page to create a react router from scratch.</p>
-            <button onClick={() => navigate('/about')}>Go to About Us</button>
+            <Link to='/about'>Go to About Us</Link>
         </>
     )
 }
