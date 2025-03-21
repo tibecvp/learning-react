@@ -1,33 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function HomePage() {
   return (
     <>
+      <h1>Home Page</h1>
+      <p>This is an example page to create a react router from scratch.</p>
+      <a href="/about">Go to About Us</a>
+    </>
+  )
+}
+
+function AboutPage() {
+  return (
+    <>
+      <h1>About Us</h1>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <img width='240px' src="https://media.licdn.com/dms/image/v2/D5603AQHEORdTR4pcuw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724258334598?e=1747872000&v=beta&t=xqkZsLN5L7XV4w-zeyakXgXVVBvQakFJvfmwkPoGNyc" alt="Tibe´s picture" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p>This is an example page to create a react router from scratch.</p>
+      <a href="/">Go to Home</a>
+    </>
+  )
+}
+
+function App() {
+  const [currentPath, setCurrentPath] = useState(window.location.pathname)
+  return (
+    <>
+      {currentPath === '/' && <HomePage />}
+      {currentPath === '/about' && <AboutPage />}
     </>
   )
 }
