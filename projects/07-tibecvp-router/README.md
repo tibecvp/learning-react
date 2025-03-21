@@ -4,7 +4,7 @@
 - [x] Install the linter
 - [x] Create a way to make MPAs (Multiple Page Application)
 - [x] Create a way to make SPAs (Single Page Applications)
-- [] Be able to navigate between pages with the back button
+- [x] Be able to navigate between pages with the back button
 - [] Create a Link component to make it declarative
 - [] Create a Router component to make it more declarative
 - [] Support a default route (404)
@@ -20,7 +20,7 @@
 - [x] Instalar el linter
 - [x] Crear una forma de hacer MPAs (Multiple Page Application)
 - [x] Crea una forma de hacer SPAs (Single Page Applications)
-- [] Poder navegar entre páginas con el botón de atrás
+- [x] Poder navegar entre páginas con el botón de atrás
 - [] Crear componente Link para hacerlo declarativo
 - [] Crear componente Router para hacerlo más declarativo
 - [] Soportar ruta por defecto (404)
