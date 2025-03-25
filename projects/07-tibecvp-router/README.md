@@ -7,8 +7,8 @@
 - [x] Be able to navigate between pages with the back button
 - [x] Create a Link component to make it declarative
 - [x] Create a Router component to make it more declarative
-- [] Support a default route (404)
-- [] Support routes with parameters
+- [x] Support a default route (404)
+- [x] Support routes with parameters
 - [] <Route /> component to make it declarative
 - [] Lazy loading of routes
 - [] Implement i18n with routes
@@ -23,8 +23,8 @@
 - [x] Poder navegar entre páginas con el botón de atrás
 - [x] Crear componente Link para hacerlo declarativo
 - [x] Crear componente Router para hacerlo más declarativo
-- [] Soportar ruta por defecto (404)
-- [] Soportar rutas con parámetros
+- [x] Soportar ruta por defecto (404)
+- [x] Soportar rutas con parámetros
 - [] Componente <Route /> para hacerlo declarativo
 - [] Lazy Loading de las rutas
 - [] Hacer un i18n con las rutas

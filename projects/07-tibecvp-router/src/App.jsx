@@ -2,6 +2,7 @@ import { HomePage } from "./pages/Home.jsx"
 import { AboutPage } from "./pages/About.jsx"
 import { Router } from "./Router.jsx"
 import Page404 from "./pages/404.jsx"
+import SearchPage from "./pages/SearchPage.jsx"
 
 const routes = [
   {
@@ -13,8 +14,8 @@ const routes = [
     Component: AboutPage
   },
   {
-    path: '/contact',
-    Component: () => <h1>This is my Contact</h1>
+    path: '/search/:query',
+    Component: SearchPage
   }
 ]
 
