@@ -5,8 +5,8 @@
 - [x] Create a way to make MPAs (Multiple Page Application)
 - [x] Create a way to make SPAs (Single Page Applications)
 - [x] Be able to navigate between pages with the back button
-- [] Create a Link component to make it declarative
-- [] Create a Router component to make it more declarative
+- [x] Create a Link component to make it declarative
+- [x] Create a Router component to make it more declarative
 - [] Support a default route (404)
 - [] Support routes with parameters
 - [] <Route /> component to make it declarative
@@ -21,8 +21,8 @@
 - [x] Crear una forma de hacer MPAs (Multiple Page Application)
 - [x] Crea una forma de hacer SPAs (Single Page Applications)
 - [x] Poder navegar entre páginas con el botón de atrás
-- [] Crear componente Link para hacerlo declarativo
-- [] Crear componente Router para hacerlo más declarativo
+- [x] Crear componente Link para hacerlo declarativo
+- [x] Crear componente Router para hacerlo más declarativo
 - [] Soportar ruta por defecto (404)
 - [] Soportar rutas con parámetros
 - [] Componente <Route /> para hacerlo declarativo
