@@ -10,8 +10,8 @@
 - [x] Support a default route (404)
 - [x] Support routes with parameters
 - [x] <Route /> component to make it declarative
-- [] Lazy loading of routes
-- [] Implement i18n with routes
+- [x] Lazy loading of routes
+- [x] Implement i18n with routes
 - [] Testing
 - [] Publish the package on NPM
 ---
@@ -26,7 +26,7 @@
 - [x] Soportar ruta por defecto (404)
 - [x] Soportar rutas con parámetros
 - [x] Componente <Route /> para hacerlo declarativo
-- [] Lazy Loading de las rutas
-- [] Hacer un i18n con las rutas
+- [x] Lazy Loading de las rutas
+- [x] Hacer un i18n con las rutas
 - [] Testing
 - [] Publicar el paquete en NPM
