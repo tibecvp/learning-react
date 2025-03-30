@@ -4,7 +4,7 @@ import Page404 from "./pages/404.jsx"
 import SearchPage from "./pages/SearchPage.jsx"
 
 import { Router } from "./Router.jsx"
-import { Route } from "./pages/Route.jsx"
+import { Route } from "./Route.jsx"
 
 const HomePage = lazy(() => import('./pages/Home.jsx'))
 const LazyAboutPage = lazy(() => import('./pages/About.jsx'))
